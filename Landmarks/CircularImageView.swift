@@ -10,10 +10,11 @@ import SwiftUI
 struct CircularImageView: View {
     var body: some View {
         Image("SampleImage")
-            .aspectRatio(contentMode: .fit)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
             .frame(width: 150, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             .clipShape(Circle())
-            .overlay(Circle().stroke(Color.gray, lineWidth: 4))
+            .overlay(Circle().stroke(Color.black, lineWidth: 3))
 
     }
 }
