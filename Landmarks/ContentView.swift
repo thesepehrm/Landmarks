@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack(alignment: .center) {
+            CircularImageView()
+            
+            Text("CN Tower")
+                .font(.title)
+            Text("Toronto, Canada")
+                .font(.subheadline)
+        }
+        
+            
     }
 }
 
