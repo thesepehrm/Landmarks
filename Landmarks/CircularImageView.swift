@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct CircularImageView: View {
+    var image: Image
+    
     var body: some View {
-        Image("SampleImage")
+        image
             .resizable()
             .aspectRatio(contentMode: .fill)
             .clipShape(Circle())
@@ -20,6 +22,7 @@ struct CircularImageView: View {
 
 struct CircularImageView_Previews: PreviewProvider {
     static var previews: some View {
-        CircularImageView()
+        CircularImageView(image: Image("cntower"))
+            .frame(width: 200.0, height: 200.0)
     }
 }
