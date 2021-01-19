@@ -15,6 +15,7 @@ struct LandmarkRow: View {
             landmark.image
                 .resizable()
                 .frame(width: 50, height: 50, alignment: .center)
+                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
             Text(landmark.name).font(.title3)
             
             Spacer()
