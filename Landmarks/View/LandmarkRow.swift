@@ -19,7 +19,7 @@ struct LandmarkRow: View {
             Text(landmark.name).font(.title3)
             
             Spacer()
-            Image(systemName: "chevron.right").foregroundColor(.gray)
+            
         }.padding()
     }
 }
