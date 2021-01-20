@@ -1,47 +1,44 @@
 //
-//  ContentView.swift
+//  LandmarkDetailView.swift
 //  Landmarks
 //
-//  Created by Sepehr Mohammadi on 1/18/21.
+//  Created by Sepehr Mohammadi on 1/20/21.
 //
 
 import SwiftUI
-import UIKit
 
-struct ContentView: View {
+struct LandmarkDetailView: View {
+    var landmark : Landmark
 
     var body: some View {
         VStack(alignment: .center) {
-            MapUIView()
+            MapUIView(coordinate: landmark.locationCoordinate)
                 .frame(height: 300)
                 .ignoresSafeArea(edges: .top)
 
-            CircularImageView(image: Image("cntower"))
+            CircularImageView(image: landmark.image)
                 .frame(width: 200, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .offset(y: -165)
                 .padding(.bottom, -165)
 
             VStack(alignment: .center) {
                 
-                Text("CN Tower")
+                Text(landmark.name)
                     .font(.title)
-                Text("Toronto, Canada")
+                Text(landmark.state)
                     .font(.subheadline)
             }.padding()
             
             Divider()
             
-            VStack(alignment: .leading) {
+            ScrollView() {
                 HStack {
                     Spacer()
                 }
-                Text("About CN Tower")
+                Text("About \(landmark.name)")
                     .font(.title2).padding(.bottom)
                 
-                Text(
-                    """
-                    The CN Tower is a 553.3 m-high concrete communications and observation tower located in Downtown Toronto, Ontario, Canada. Built on the former Railway Lands, it was completed in 1976. Its name "CN" originally referred to Canadian National, the railway company that built the tower.
-                    """)
+                Text(landmark.description)
                     .font(.body)
                     .multilineTextAlignment(.leading)
                 
@@ -50,17 +47,20 @@ struct ContentView: View {
             }.padding()
 
             Spacer()
-            Text("Landmarks App v1.0")
+            Text("Landmarks App v1.1")
                 .font(.caption)
                 .foregroundColor(.gray)
-        }
-        
             
+                
+        }
+        .navigationTitle(landmark.name)
+        .navigationBarTitleDisplayMode(.inline)
+        
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct LandmarkDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LandmarkDetailView(landmark: landmarks[0])
     }
 }
