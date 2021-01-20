@@ -9,8 +9,8 @@
         "isFavorite": true,
         "park": "",
         "coordinates": {
-            "longitude": 43.64267322875117,
-            "latitude": -79.38702159548887
+            "longitude": -79.387021,
+            "latitude": 43.642673
         },
         "description": "The CN Tower is a 553.3 m-high concrete communications and observation tower located in Downtown Toronto, Ontario, Canada. Built on the former Railway Lands, it was completed in 1976. Its name \"CN\" originally referred to Canadian National, the railway company that built the tower.",
         "imageName": "cntower"
